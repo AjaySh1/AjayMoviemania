@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Movie App</title>
+  </head>
+  <body>
+    <header>
+        <div class="moviemania"><span class="toggle"><button id="sidebar-toggle" class="sidebar-toggle">☰</button></span >Movie<span id="mania">Mania..</span></div>
+        <div class="container">
+        <div class="options">
+    {{#if username}}
+
+    {{else}}
+        <a href="/login" class="button">Login</a>
+        <a href="/register" class="button">Register</a>
+    {{/if}}
+</div>
+
+    </div>
+      <form id="form">
+        <input type="text" id="search" class="search-bar" placeholder="Search...">
+      </form> 
+    </header>
+    <!-- //creation of side bar. -->
+
+    <div class="sidebar">
+      <div id="hme" style="display: flex; align-items: center; gap: 10px;">
+    <span>
+        <a href="/" style="font-size:27px;color:red" class="fa">&#xf015;</a>
+    </span>
+    {{#if username}}   
+        <span id="usr">{{username}}</span>
+    {{/if}}
+</div>
+
+      <!-- <a href="#" id="where-to-watch">Where to Watch</a> -->
+      <div class="dropdown" id="dd">
+        <button class="dropbtn" id="filter">Sort By
+          <span class="arrow">&#9660;</span>
+        </button>
+        <div class="dropdown-content">
+
+          <a href="#" id="popularity">Recently Added</a>
+          <a href="#" id="revenue">Revenue</a>
+          <a href="#" id="rating">Rating</a>
+        </div>
+      </div>
+     
+     
+     <div class="sideelemnts" id="add-to-watchlist" ><a href="#" > <button onclick="showWatchlist()" id="addtowatchlist" style="cursor: pointer;">View Watchlist</button>
+     </a></div>
+     
+     <div class="dropdown" id="did">
+      <button class="dropbtn " id="filt">Genre
+        <span class="arrow">&#9660;</span>
+      </button>
+      <div class="dropdown-content" id="dropdown-content2"> 
+        <div class="leftfilter">
+        
+        <a href="#" id="12">Adventure</a>
+        <a href="#" id="35">Comedy</a>
+        <a href="#" id="28">Action</a>
+        <a href="#" id="16">Animation</a>
+        <a href="#" id="18">Drama</a>
+        <a href="#" id="878">Science Fiction</a>
+      </div>
+      <div class="rightfilter">
+        <a href="#" id="27">Horror</a>
+        <a href="#" id="10749">Romance</a>
+        <a href="#" id="53">Thriller</a>
+        <a href="#" id="10751">Family</a>
+        <a href="#" id="80">Crime</a>
+        <a href="#" id="111">None</a>
+      </div>
+      </div>
+    </div>
+     <div class="logout" id="logout">
+        {{#if username}}
+        <a href="/logout">Logout</a>
+    {{/if}}
+     </div>
+    </div>
+
+    </div>
+    
+    <main id="main"></main>
+    <script src="js/script.js"></script>
+  </body>
+</html>

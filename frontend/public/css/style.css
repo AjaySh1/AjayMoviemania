@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+:root {
+  --primary-color: #000000;
+  --secondary-color: #960606;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+/* header css */
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: var(--secondary-color);
+  position: fixed;
+  width: 100%;
+  margin-top: -7px;
+  z-index: 100;
+  height: 60px;
+}
+.moviemania{
+  font-size: 20px;
+  color: #fff;
+  font-weight: bolder;
+  margin-left: -25px;
+}
+
+#mania
+{
+  color: aqua;
+}
+/* css for search bar */
+.search-bar {
+  padding: 10px;
+  font-size: 18px;
+  width: 9rem;
+  border: none;
+  border-bottom: 2px solid #0c5f97; 
+  height: 28px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #f8f8f8; /* Match the background color */
+  color: #333; /* Text color */
+  transition: border-bottom 0.3s; /* Smooth transition for border-bottom */
+  margin-top: 3px;
+  margin-left: 20px;
+}
+
+.search-bar:focus {
+  outline: none; /* Remove default focus outline */
+  border-bottom: 3px solid #e74c3c; /* Change border color on focus */
+}
+
+
+/* css for main object */
+main {
+ 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+}
+
+.movie {
+  width: 250px;
+  margin: 1rem;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 5px rgba(255, 252, 252, 0.233);
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.movie img {
+  width: 100%;
+}
+
+.movie-info {
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap:0.2rem;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
+}
+
+.movie-info h3 {
+  margin-top: 0;
+}
+
+.movie-info span {
+  background-color: var(--primary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.movie-info span.green {
+  color: lightgreen;
+}
+
+.movie-info span.orange {
+  color: orange;
+}
+
+.movie-info span.red {
+  color: red;
+}
+
+.overview {
+  background-color:rgb(255, 255, 255);
+  color: rgb(5, 39, 39);
+  padding: 2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 100%;
+  transform: translateY(101%);
+  overflow-y: auto;
+  transition: transform 0.3s ease-in;
+}
+.overview h3{
+  color: #960606;
+  text-decoration: underline;
+}
+.movie:hover .overview {
+  transform: translateY(0);
+}
+
+
+.sidebar-toggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1200;
+  margin-left: 1rem;
+  margin-right: 2px;
+}
+.sidebar {
+  margin-top: 53px;
+  height: 100%;
+  width: 220px;
+  position:fixed;
+  top: 0;
+  left: -250px; /* Hidden by default */
+  background-color: #111;
+  padding-top: 30px;
+  transition: left 0.3s;
+  z-index: 1000;
+}
+
+.sidebar a {
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+}
+
+.sidebar a:hover {
+  background-color: #575757;
+}
+
+#main {
+  margin-top: 40px;
+  padding: 20px;
+  transition: margin-left 0.3s;
+  position: absolute;
+}
+
+.sidebar-visible .sidebar 
+{
+  left: 0;
+}
+
+.dropdown {
+  /* float: left; */
+  /* overflow: hidden; */
+  margin-bottom: -19px;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 18px;
+    border: none;
+  outline: none;
+  color: white;
+  padding: 17px 0px 20px 20px;
+  cursor: pointer;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+#hme{
+    margin-top: -11px;
+}
+#hme a{
+    margin-top: -14px;
+    width: 50px;
+    margin-bottom: -10px;
+}
+#hme a:hover{
+  background-color: #111;
+}
+ 
+
+.sidebar a:hover, .dropdown:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 220px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+
+#usr{
+    color: greenyellow;
+    font-size: 20px;
+    font-weight: 200;
+    font-weight: bolder;
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 5px 20px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: smaller;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #dfd4d4;
+}
+
+/* Show the dropdown menu on hover */
+/* .dropdown:hover .dropdown-content {
+  display: block;
+} */
+.button{
+    margin-top: 100px;
+    color: #0d0430;
+    text-decoration: none;
+    border:2px solid white;
+    border-radius: 5px;
+    background-color: #fcf9f9;
+    font-weight: 400;
+}
+
+.arrow{
+  font-size: 15px;
+  margin-left: 2px;
+  margin-top: -10px;
+  color: #c76e6e;
+}
+.sideelemnts
+{
+  margin-top: 10px;
+} 
+ #dropdown-content2 {
+  display: none;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+  z-index: 1;
+}
+
+#dropdown-content2 a {
+  font-size: small;
+ 
+  padding-left: 2.9px;
+  padding-right: 2.9px;
+  text-decoration: none;
+  display: block;
+  border: 2px solid rgb(148, 140, 140);
+  border-radius: 10px;
+  margin-top: 2px;
+  width: 100%;
+  text-align: center;
+  
+}
+
+#dropdown-content2 a:hover {
+  background-color:#dcd2d2;
+}
+
+
+.leftfilter, .rightfilter {
+  
+  padding: 5px;
+  width: 50%; 
+}
+
+
+.dropdown-content a.active {
+  background-color: rgb(129, 125, 130);
+}
+
+#addtowatchlist {
+  font-size: 18px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  padding-left: 0px;
+}
+
+.side-elements {
+  padding: 10px;
+  border: 2px solid transparent; /* Default border */
+  transition: all 0.3s ease-in-out;
+}
+
+.side-elements:hover {
+  background-color: #960606;
+  color: white;
+  text-decoration: none;
+  border-color: #FF4500;
+}
+
+.side-elements.active {
+  background-color: var(--secondary-color);
+  color: white;
+  border-color: #960606;
+}
+
+.watchlist-btn,.remove-btn {
+  margin-top: 10px;
+  border: 2px solid #000000; 
+  background-color:  #cc0000;
+  color: white;
+ 
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  padding: 5px 10px; 
+  border-radius: 5px;
+}
+
+.watchlist-btn:hover,.remove-btn:hover {
+  background-color: #ff0000; 
+  color: rgb(255, 255, 255); 
+  text-decoration: none; 
+  border-color: #FF4500; 
+}
+
+.logout{
+    margin-top: 12px;
+}
